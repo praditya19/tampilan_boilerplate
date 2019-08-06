@@ -6,7 +6,7 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React from 'react';
+import React from '../Buku/node_modules/react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
@@ -16,7 +16,7 @@ import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-
+import Book from 'containers/Buku';
 import GlobalStyle from '../../global-styles';
 
 const AppWrapper = styled.div`
@@ -41,6 +41,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
+        <Route path="/book" component={Book} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
